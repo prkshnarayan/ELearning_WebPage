@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - E-Learning Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">E-Learn</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                        <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
+                        <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container py-4">
+            <h1 class="mb-4">My Learning Dashboard</h1>
+            
+            <!-- Progress Section -->
+            <section class="dashboard-grid mb-5">
+                <div class="progress-card">
+                    <h3>Overall Progress</h3>
+                    <progress id="overallProgress" value="0" max="100" class="w-100"></progress>
+                    <p id="progressText">0% Complete</p>
+                </div>
+                
+                <div class="stats-card">
+                    <h3>Courses Completed</h3>
+                    <p id="completedCount" class="display-4">0</p>
+                </div>
+                
+                <div class="quiz-stats-card">
+                    <h3>Average Quiz Score</h3>
+                    <p id="avgScore" class="display-4">0%</p>
+                </div>
+            </section>
+
+            <!-- Available Courses Section -->
+            <section class="mt-5">
+                <h2>Available Courses</h2>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Duration</th>
+                            <th>Lessons</th>
+                            <th>Progress</th>
+                        </tr>
+                    </thead>
+                    <tbody id="courseTableBody">
+                        <!-- Dynamically populated by JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-light py-3 mt-auto">
+        <div class="container text-center">
+            <p>&copy; 2024 E-Learn Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

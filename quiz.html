@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Test Your Knowledge | E-Learn Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fas fa-graduation-cap"></i> E-Learn
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="quiz.html">Quiz</a></li>
+                        <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container mt-5 pt-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Quiz</li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container py-4">
+            <h1 class="mb-4 section-title">Course Quizzes</h1>
+            
+            <!-- Course Selection Cards -->
+            <div class="row mb-5" id="courseSelection">
+                <div class="col-md-4 mb-3">
+                    <div class="course-select-card" onclick="selectCourse(1)">
+                        <div class="course-select-header bg-primary">
+                            <i class="fas fa-code fa-3x"></i>
+                        </div>
+                        <div class="course-select-body">
+                            <h4>Web Development</h4>
+                            <p>15 Questions • Beginner</p>
+                            <span class="badge bg-primary">Take Quiz</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="course-select-card" onclick="selectCourse(2)">
+                        <div class="course-select-header bg-warning">
+                            <i class="fab fa-js fa-3x"></i>
+                        </div>
+                        <div class="course-select-body">
+                            <h4>Advanced JavaScript</h4>
+                            <p>15 Questions • Advanced</p>
+                            <span class="badge bg-warning text-dark">Take Quiz</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="course-select-card" onclick="selectCourse(3)">
+                        <div class="course-select-header bg-success">
+                            <i class="fab fa-python fa-3x"></i>
+                        </div>
+                        <div class="course-select-body">
+                            <h4>Python Programming</h4>
+                            <p>15 Questions • Intermediate</p>
+                            <span class="badge bg-success">Take Quiz</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Selected Course Info -->
+            <div id="selectedCourseInfo" class="alert alert-info mb-4" style="display: none;">
+                <i class="fas fa-info-circle me-2"></i>
+                <span id="selectedCourseName"></span>
+                <button class="btn btn-sm btn-outline-primary float-end" onclick="resetCourseSelection()">
+                    <i class="fas fa-redo me-1"></i>Change Course
+                </button>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div id="quizProgressContainer" style="display: none;">
+                <div class="quiz-progress mb-4">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Progress</span>
+                        <span id="progressText">0/15 Questions Answered</span>
+                    </div>
+                    <div class="progress" style="height: 10px;">
+                        <div id="quizProgress" class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Loader -->
+            <div id="quizLoader" class="text-center py-5" style="display: none;">
+                <div class="custom-spinner mx-auto mb-3"></div>
+                <h5>Loading Quiz Questions...</h5>
+                <p class="text-muted">Please wait while we prepare your quiz</p>
+            </div>
+
+            <!-- Quiz Content -->
+            <div id="quizContent" style="display: none;">
+                <div class="quiz-container">
+                    <div class="quiz-header">
+                        <h4 class="mb-0" id="quizTitle">Web Development Fundamentals Quiz</h4>
+                        <p class="mb-0 opacity-75">Test your knowledge with 15 questions</p>
+                    </div>
+                    
+                    <form id="quizForm">
+                        <div id="questionsContainer">
+                            <!-- Questions will be dynamically inserted here -->
+                        </div>
+                        
+                        <div class="p-4 text-center">
+                            <button type="button" id="submitQuiz" class="btn btn-primary btn-lg px-5">
+                                <i class="fas fa-check-circle me-2"></i>Submit Quiz
+                            </button>
+                            <button type="button" id="resetQuiz" class="btn btn-outline-secondary btn-lg px-5 ms-2">
+                                <i class="fas fa-redo me-2"></i>Reset
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Quiz Results -->
+                <div id="quizResults" class="mt-4" style="display: none;">
+                    <div class="results-card">
+                        <h2 class="mb-4">Your Results</h2>
+                        <div id="scoreDisplay"></div>
+                        <div id="gradeDisplay" class="mt-3"></div>
+                        <div id="feedbackDisplay" class="mt-3"></div>
+                        <div id="questionReview" class="mt-4 text-start"></div>
+                        <div class="mt-4">
+                            <button class="btn btn-primary me-2" onclick="resetQuiz()">
+                                <i class="fas fa-redo me-2"></i>Try Again
+                            </button>
+                            <button class="btn btn-outline-primary" onclick="resetCourseSelection()">
+                                <i class="fas fa-book me-2"></i>Choose Another Quiz
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 E-Learn Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>

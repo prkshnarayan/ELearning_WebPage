@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Explore Learning Paths | E-Learn Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fas fa-graduation-cap"></i> E-Learn
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="courses.html">Courses</a></li>
+                        <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
+                        <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container mt-5 pt-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Courses</li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container py-4">
+            <!-- Page Header -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h1 class="section-title">Available Courses</h1>
+                    <p class="text-muted">Choose from our wide range of courses and start learning today</p>
+                </div>
+            </div>
+            
+            <!-- Course Cards using Flexbox -->
+            <div class="courses-flex-container" id="courseCards">
+                <!-- Dynamically populated by JavaScript -->
+            </div>
+
+            <!-- Course Details Table Section -->
+            <section class="mt-5">
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <h2 class="section-title">Detailed Course Information</h2>
+                    </div>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="table table-hover course-details-table">
+                        <thead>
+                            <tr>
+                                <th><i class="fas fa-book me-2"></i>Course Name</th>
+                                <th><i class="fas fa-user-tie me-2"></i>Instructor</th>
+                                <th><i class="fas fa-signal me-2"></i>Level</th>
+                                <th><i class="fas fa-list-ol me-2"></i>Lessons</th>
+                            </tr>
+                        </thead>
+                        <tbody id="courseDetailsTable">
+                            <!-- Dynamically populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Sample Lesson Structure -->
+            <section class="mt-5">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="lesson-structure-card">
+                            <h3 class="mb-4"><i class="fas fa-sitemap me-2"></i>Typical Course Structure</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="structure-timeline">
+                                        <div class="timeline-item">
+                                            <div class="timeline-marker bg-primary"></div>
+                                            <div class="timeline-content">
+                                                <h5>Module 1: Introduction</h5>
+                                                <p>Getting started with basics and fundamentals</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-marker bg-success"></div>
+                                            <div class="timeline-content">
+                                                <h5>Module 2: Core Concepts</h5>
+                                                <p>Deep dive into essential topics</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-marker bg-warning"></div>
+                                            <div class="timeline-content">
+                                                <h5>Module 3: Advanced Topics</h5>
+                                                <p>Complex concepts and real-world applications</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-marker bg-danger"></div>
+                                            <div class="timeline-content">
+                                                <h5>Module 4: Final Project</h5>
+                                                <p>Hands-on project to reinforce learning</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="lesson-list-container p-4 bg-light rounded">
+                                        <h5 class="mb-3">Sample Lesson Breakdown:</h5>
+                                        <ol id="lessonList" class="lesson-list">
+                                            <li>Introduction to the Course
+                                                <ul class="sub-lessons">
+                                                    <li>Course Overview</li>
+                                                    <li>Learning Objectives</li>
+                                                    <li>Prerequisites</li>
+                                                </ul>
+                                            </li>
+                                            <li>Basic Concepts
+                                                <ol type="a" class="sub-lessons">
+                                                    <li>Core Principles</li>
+                                                    <li>Practical Examples</li>
+                                                    <li>Hands-on Exercises</li>
+                                                </ol>
+                                            </li>
+                                            <li>Advanced Topics
+                                                <ul class="sub-lessons">
+                                                    <li>Expert Techniques</li>
+                                                    <li>Best Practices</li>
+                                                    <li>Case Studies</li>
+                                                </ul>
+                                            </li>
+                                            <li>Final Assessment
+                                                <ul class="sub-lessons">
+                                                    <li>Practice Tests</li>
+                                                    <li>Final Exam</li>
+                                                    <li>Project Submission</li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learning Path Recommendation -->
+            <section class="mt-5">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="recommendation-card">
+                            <h3 class="mb-4"><i class="fas fa-route me-2"></i>Recommended Learning Path</h3>
+                            <div class="path-steps">
+                                <div class="step completed">
+                                    <div class="step-icon"><i class="fas fa-check"></i></div>
+                                    <div class="step-content">
+                                        <h5>Beginner Path</h5>
+                                        <p>Start with Web Development Fundamentals</p>
+                                    </div>
+                                </div>
+                                <div class="step active">
+                                    <div class="step-icon"><i class="fas fa-play"></i></div>
+                                    <div class="step-content">
+                                        <h5>Intermediate Path</h5>
+                                        <p>Move to Python Programming</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-icon"><i class="fas fa-lock"></i></div>
+                                    <div class="step-content">
+                                        <h5>Advanced Path</h5>
+                                        <p>Master Advanced JavaScript</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5><i class="fas fa-graduation-cap me-2"></i>E-Learn</h5>
+                    <p class="text-white-50">Empowering learners through quality education.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Contact</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="text-white-50 me-2"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-white-50 me-2"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white-50 me-2"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-github fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center text-white-50">
+                <small>&copy; 2024 E-Learn Platform. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

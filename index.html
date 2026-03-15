@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learn Platform - Master Your Skills</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fas fa-graduation-cap"></i> E-Learn
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                        <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
+                        <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container mt-5 pt-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Welcome</li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Animation -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row min-vh-80 align-items-center">
+                    <div class="col-lg-6 animate__animated animate__fadeInLeft">
+                        <h1 class="display-3 fw-bold gradient-text">Learn Without Limits</h1>
+                        <p class="lead text-secondary mb-4">Start your learning journey today with our structured courses, interactive quizzes, and track your progress in real-time.</p>
+                        <div class="d-flex gap-3">
+                            <a href="courses.html" class="btn btn-primary btn-lg">
+                                <i class="fas fa-play-circle me-2"></i>Start Learning
+                            </a>
+                            <a href="#features" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-info-circle me-2"></i>Learn More
+                            </a>
+                        </div>
+                        <div class="row mt-5 g-4">
+                            <div class="col-4">
+                                <div class="stat-card">
+                                    <h3 class="h2 fw-bold text-primary">50+</h3>
+                                    <p class="text-muted">Expert Courses</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-card">
+                                    <h3 class="h2 fw-bold text-primary">1000+</h3>
+                                    <p class="text-muted">Happy Students</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-card">
+                                    <h3 class="h2 fw-bold text-primary">24/7</h3>
+                                    <p class="text-muted">Lifetime Access</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 animate__animated animate__fadeInRight">
+                        <!-- <img src="https://illustrations.popsy.co/white/online-learning.svg" alt="Learning Illustration" class="img-fluid floating"> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5 section-title">Why Choose E-Learn?</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="feature-card text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-laptop-code fa-3x text-primary"></i>
+                            </div>
+                            <h3>Interactive Learning</h3>
+                            <p class="text-muted">Engage with hands-on exercises and real-world projects</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-trophy fa-3x text-primary"></i>
+                            </div>
+                            <h3>Track Progress</h3>
+                            <p class="text-muted">Monitor your achievements and course completion</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-clock fa-3x text-primary"></i>
+                            </div>
+                            <h3>Learn at Your Pace</h3>
+                            <p class="text-muted">Access content anytime, anywhere, on any device</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Courses Preview -->
+        <section class="courses-preview py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 section-title">Popular Courses</h2>
+                <div class="row g-4" id="popularCourses">
+                    <!-- Dynamically populated by JavaScript -->
+                </div>
+                <div class="text-center mt-4">
+                    <a href="courses.html" class="btn btn-outline-primary btn-lg">
+                        View All Courses <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials-section py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5 section-title">What Our Students Say</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="testimonial-card p-4">
+                            <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                            <p class="mb-3">"The courses are well-structured and easy to follow. I've learned so much in such a short time!"</p>
+                            <div class="d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h5 class="mb-0">Sarah Johnson</h5>
+                                    <small class="text-muted">Web Developer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="testimonial-card p-4">
+                            <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                            <p class="mb-3">"The interactive quizzes really help reinforce learning. Best platform for self-paced learning!"</p>
+                            <div class="d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h5 class="mb-0">Michael Chen</h5>
+                                    <small class="text-muted">Software Engineer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="testimonial-card p-4">
+                            <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                            <p class="mb-3">"Excellent content and great user experience. Highly recommended for beginners!"</p>
+                            <div class="d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Student" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h5 class="mb-0">Emily Rodriguez</h5>
+                                    <small class="text-muted">Data Analyst</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h2 class="text-white">Ready to Start Your Learning Journey?</h2>
+                        <p class="text-white-50 mb-0">Join thousands of students already learning on our platform.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                        <a href="courses.html" class="btn btn-light btn-lg">
+                            Get Started Now <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5><i class="fas fa-graduation-cap me-2"></i>E-Learn</h5>
+                    <p class="text-white-50">Empowering learners through quality education.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="courses.html" class="text-white-50 text-decoration-none">Courses</a></li>
+                        <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                        <li><a href="dashboard.html" class="text-white-50 text-decoration-none">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/" class="text-white-50 me-2"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="https://twitter.com/" class="text-white-50 me-2"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="https://www.linkedin.com/in/bommisetty-jaya-prakash/" class="text-white-50 me-2"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="https://github.com/prkshnarayan" class="text-white-50"><i class="fab fa-github fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center text-white-50">
+                <small>&copy; 2026 E-Learn Platform. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
