@@ -16,6 +16,16 @@ A modern, client-side e-learning platform built with HTML, CSS, Bootstrap, and J
 </p>
 
 ---
+## 📌 Demo
+
+Try the live demo of the project here:  
+👉 https://prkshnarayan.github.io/ELearning_WebPage/
+
+Or click the badge below:
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Click%20Here-blue)](https://prkshnarayan.github.io/ELearning_WebPage/)
+
+---
 
 ## ✨ Features
 
