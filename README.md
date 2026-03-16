@@ -96,10 +96,10 @@ ELearning-platform/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/e-learning-platform.git
+git clone https://github.com/prkshnarayan/ELearning_WebPage
 
 # Navigate to project directory
-cd e-learning-platform
+cd ELearning_WebPage
 
 # Open with live server (using npx)
 npx live-server
