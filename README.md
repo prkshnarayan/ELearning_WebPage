@@ -127,9 +127,7 @@ python -m http.server 8000
 // Check detailed information in table below
 ```
 
-### 2. **Take
-
-Quizzes** 📝
+### 2. **Take Quizzes** 📝
 ```javascript
 // Go to Quiz page
 // Select a course (Web Dev, Advanced JS, or Python)
